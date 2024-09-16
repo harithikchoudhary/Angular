@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Functions</title>
+</head>
+<body>
+    <script>
+
+
+        //function with one parameter
+        function helloworld(name){
+            return "Hello " +name;
+        }
+
+       const hello = (name) => {
+            return "Hello " +name;
+        };
+
+        console.log(helloworld("Hrithik"));
+        console.log(hello("Choudhary"));
+
+ 
+        //function without parameter
+        function firstName(){
+            return "Hello Hrithik";
+        }
+
+
+        const lastName = () => {
+            return "Hello Choudary";
+        };
+
+        console.log(firstName());
+        console.log(lastName());
+
+
+        //functions with two parameters
+        function job(role,company){
+            return "I'm, " +role+ " at " +company;
+        }
+
+        const job1 = (role,company) => {
+            return "I'm, " +role+ " at " +company;
+
+        };
+
+        console.log(job("Software Developer","UST"));
+        console.log(job1("Software Developer","UST"));
+
+
+
+        //callback functions
+        const isEven = (n) => {
+            return n % 2 == 0;
+        };
+
+        let printMsg = (evenFunc, num) => {
+
+            const isNumEven = evenFunc(num);
+
+            console.log(`${num} is an even number : ${isNumEven}`);
+        };
+
+        printMsg(isEven,16);
+
+
+
+        //Objects in JavaScript
+        var movie = {name: "Titanic", year: 1997 };
+        
+        console.log(movie.name);
+        console.log(movie.year);
+
+        movie.hero = "Jack";
+        console.log(movie);
+
+
+        //Json Objects
+        var jsonRef = {
+                    data: [
+                    {
+                        company: "Google",
+                        location: "San Francisco",
+                        country: "USA",
+                        employees: 135000
+                    },
+                    {
+                        company: "UST",
+                        location: "Kerala",
+                        country: "India",
+                        employees: 28000
+                    },
+                    {
+                        company: "Infosys",
+                        location: "Bengaluru",
+                        country: "India",
+                        employees: 259000
+                    },
+                    {
+                        company: "Apple",
+                        location: "California",
+                        country: "USA",
+                        employees: 154000
+                    },
+                    {
+                        company: "Mercedes",
+                        location: "Stuttgart",
+                        country: "Germany",
+                        employees: 167000
+                    },
+                    {
+                        company: "Nvidia",
+                        location: "Santa Clara",
+                        country: "USA",
+                        employees: 22000
+                    },
+                    {
+                        company: "Samsung",
+                        location: "Seoul",
+                        country: "South Korea",
+                        employees: 287000
+                    },
+                    {
+                        company: "Toyota",
+                        location: "Toyota City",
+                        country: "Japan",
+                        employees: 366283
+                    },
+                    {
+                        company: "Nestle",
+                        location: "Vevey",
+                        country: "Switzerland",
+                        employees: 273000
+                    },
+                    {
+                        company: "Volkswagen",
+                        location: "Wolfsburg",
+                        country: "Germany",
+                        employees: 670000
+                    }
+                    ]
+                };
+                console.log(jsonRef.data);
+                console.log(jsonRef.data[0].location);
+
+
+                //Total employees by Country
+                const countEmployeesByCountry = (jsonRef) => {
+                    return jsonRef.reduce((accumulator, company) => {
+                        if (accumulator[company.country]) {
+                            accumulator[company.country] += company.employees;
+                        } else {
+                            accumulator[company.country] = company.employees;
+                        }
+                        return accumulator;
+                    }, {});
+                };
+
+                const employeesByCountry = countEmployeesByCountry(jsonRef.data);
+                console.log(employeesByCountry);
+
+                //Total No of Employees
+                const totalEmployees = jsonRef.data.reduce((acc, company) => acc + company.employees, 0);
+                console.log(`Total number of employees: ${totalEmployees}`);
+
+                
+                //Company Names
+                const companyNames = jsonRef.data.map(item => item.company);
+                console.log("Company Names:", companyNames);
+
+                //Total Companies
+                const totalCompanies = jsonRef.data.reduce((accumulator, item) => accumulator + 1, 0);
+                console.log("Total Companies:", totalCompanies);
+
+                //Company Details
+                console.log("Company Details:");
+                jsonRef.data.forEach(item => {
+                    console.log(`${item.company} located in ${item.location}, ${item.country}`);
+                });
+
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        // var data = [3,5,2,8,1,9];  
+        // var cumSum = 0;
+        // function sumData(){
+        //     let total = 0;
+        //     for (var i in data){
+        //         total += data[i];
+        //     }
+        //     alert(total);
+        // }
+
+        // data.forEach((item) =>{
+        //     cumSum += item;
+
+        // })
+
+        // alert(cumSum);
+        // sumData();
+         //prefer using var in global and let in function scope
+    </script>
+    
+</body>
+</html>
+

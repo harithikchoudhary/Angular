@@ -1,0 +1,104 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    color: white;
+
+    display: grid;
+
+
+    grid-template-areas: 
+    "heading heading heading"
+    "nav main aside"
+    "nav footer footer";
+
+    grid-template-rows: 150px 1fr 70px;
+    row-gap: 10px;
+    column-gap: 10px;
+
+    background-color: black;
+
+
+}
+
+#t {
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+
+}
+
+/* header {
+    grid-area: heading;
+    background-color: blue;
+    display: flex;
+    justify-content: flex-end;
+    flex-wrap: wrap;
+} */
+
+
+header {
+    grid-area: heading;
+    background-color: blue;
+    display: flex;
+    justify-content: space-between; 
+    align-items: center;            
+    flex-wrap: wrap;
+    padding: 10px;
+}
+
+nav a {
+    margin-left: 10px;  
+    color: white;       
+    text-decoration: none; 
+}
+
+main {
+    grid-area: main;
+    text-align: justify;
+    width: 115%;
+}
+
+nav {
+    grid-area: nav;
+}
+
+
+footer {
+    grid-area: footer;
+    background-color: grey;
+}
+
+
+header > nav {
+    display: block;
+}
+
+header > nav > a {
+    color: white;
+    float: left;
+    padding: 15px 55px;
+}
+
+
+@media screen and (min-width: 768px){
+
+    body {
+        display: inline-block;
+        grid-template-columns: 1fr;
+    }
+
+}
+    
+aside {
+    grid-area: aside;
+    margin-left: 27%;
+}
+
+
+
+

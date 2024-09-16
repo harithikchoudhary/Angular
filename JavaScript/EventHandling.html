@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Handling</title>
+</head>
+<body>
+
+    
+
+
+    <form  name ="login" actions="" method="post" onsubmit="return afterSubmit()">
+    <fieldset>
+    <legend> Login Form</legend> 
+    <label for="username">Username</label>
+    <input type="text" name="username" id="uid" /><br/>
+    <label for="password">Password</label>
+    <input type="password" name="password" id="pid" /><br/>
+    <input type="submit" />
+    <input type="reset"  />
+    </fieldset>
+    </form>
+
+
+
+
+
+
+
+<!------------------------------------------------------------------------ 1st-------------------------------------------------------- -->
+    <!-- <input type ="button" value = "Greet" onclick="sayGreetings()" />
+    <input type ="button" value = "Season" onclick="showSeason()" />
+
+    <input type ="button" value = "Green" onclick="green()" />
+    <input type ="button" value = "Blue" onclick="blue()" />
+
+
+    <div id="greendiv">Hello <br/><br/><br/></div>
+    <div id="bluediv">Hello <br/><br/><br/></div>
+     -->
+
+
+    <script>
+
+
+
+
+
+        function afterSubmit(){
+            alert("Successfull Login");
+          //  var u= document.getElementsByName("username").values;
+            var u = document.login.username.value;
+            var p = document.login.password.value;
+
+           // var p = document.getElementsByName("password").values;
+            
+            if(u.length > 8 && p.length > 8)
+            
+            return true;
+            else
+            return false;
+            alert( u + p);
+           
+        
+            
+        }
+       
+    //  --------------------------------------------------------------------1st---------------------------------------------------------------
+    //    function sayGreetings() {
+    //         alert("Ola coma sava!!")
+    //     }
+
+    //     function showSeason() {
+    //         var month = new Date().getMonth();
+    //         if(month >= 6 && month <=8){
+    //             alert("Monsoon Season");
+    //         }
+    
+    //     }
+
+
+    //     function green(){
+    //         document.getElementById("greendiv").style.backgroundColor="green";
+    //         document.getElementById("greendiv").style.color="white";
+    //         document.getElementById("greendiv").style.border="2px solid black";
+    //         document.getElementById("greendiv").style.width="200px";
+    //         document.getElementById("greendiv").style.height="125px";
+    //         document.getElementById("greendiv").style.padding="10px";
+    //         document.getElementById("greendiv").style.textAlign="center";
+
+
+    //     }
+
+    //     function blue(){
+    //         document.getElementById("bluediv").style.backgroundColor="blue";
+    //         document.getElementById("bluediv").style.color="white";
+    //     }
+
+    </script>
+    
+</body>
+</html>

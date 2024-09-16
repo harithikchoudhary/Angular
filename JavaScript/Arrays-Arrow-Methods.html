@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arrays</title>
+</head>
+<body>
+    <script>
+
+        const square2 = (n) => {
+            return n*n;
+        }
+
+        var r = square2(9);
+        alert(r);
+
+        //forEach
+        const square = function(n){
+            return n*n;
+        };
+        let s = square;
+        var result = s(5);
+        console.log(result);
+        const fruits = ["apple","banana","mango"];
+        fruits.forEach((fruit ) => {
+
+            console.log(fruit);
+
+        });
+
+
+
+
+        //filter
+        const data1 = [3,6,9,25,45,20,1,16];
+        const filterData = data1.filter((n) => {
+            return n < 10; 
+        });
+        console.log(filterData);
+
+
+        //map
+        const members = ["Btwin","Joel", "Sam", "Nancy"];
+        const nominees = members.map((member) => {
+            return member + " #joined the contest" ;
+        });
+        console.log(nominees);
+
+
+        //reduce
+        const nums = [2,4,5,10,7];
+
+        const sum = nums.reduce((accumulator, curVal) => {
+            console.log(accumulator, curVal);
+            return accumulator + curVal;
+        });
+        console.log(sum);
+
+    </script>
+    
+</body>
+</html>
